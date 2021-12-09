@@ -1,0 +1,16 @@
+.Nav {
+  display: block;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.Right {
+  display: flex;
+}

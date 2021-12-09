@@ -1,0 +1,4 @@
+@font-face {
+  font-family: "whitney";
+  src: local("MyFont"), url(./Whitney-Font/whitney-medium.otf) format("otf");
+}

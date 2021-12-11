@@ -1,0 +1,57 @@
+.Container {
+  margin-top: 80px;
+  padding: 25px;
+}
+
+.Pagination {
+  font-size: 14px;
+  color: #282c3f;
+}
+
+.Pagination span {
+  font-weight: 700;
+}
+.InnerDiv {
+  display: flex;
+}
+.FilterDiv {
+  flex: 0.2;
+}
+.Filter {
+  font-weight: 700;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.Filter p {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.Shirts {
+  flex: 0.8;
+}
+
+.Cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+}
+
+.Tag {
+  padding: 0px 10px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 0px 25px;
+}
+
+.Tag span {
+  font-weight: 700;
+}
+
+.Recommend {
+}

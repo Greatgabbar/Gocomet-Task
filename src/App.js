@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Shirts from "./Components/Shirts/Shirts";
+import Shirts from "./Pages/ShirtPage/ShirtPage";
 import Nav from "./Components/Header/Nav";
 
 function App() {

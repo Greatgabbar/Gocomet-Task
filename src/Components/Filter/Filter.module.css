@@ -1,0 +1,46 @@
+.Container {
+}
+.Gender {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 20px 0px;
+  border: 1px solid #edebef;
+  border-left: 0;
+}
+.Types {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Types p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+.Heading {
+  padding: 15px 0px;
+  font-weight: 700;
+  color: #282c3f;
+  font-size: 15px;
+}
+
+.Price {
+  border: 1px solid #edebef;
+  border-left: 0;
+  border-top: 0;
+  padding: 10px 0px 15px;
+}
+
+.Brand {
+  border: 1px solid #edebef;
+  border-left: 0;
+  border-top: 0;
+  padding: 10px 0px 15px;
+}
+
+.GG {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,35 @@
+input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #282c3f;
+  cursor: pointer;
+}
+
+.label p {
+  margin: 0;
+}
+
+.checkbox {
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  background: #fff;
+  border: 2px #ddd solid;
+  margin-right: 4px;
+}
+.checkboxActive {
+  border-color: #ff3f6c;
+  background-color: #ff3f6c;
+}

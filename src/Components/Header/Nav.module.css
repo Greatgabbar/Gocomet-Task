@@ -71,6 +71,9 @@
   border: 1px solid #f5f5f6;
   border-left: 0;
 }
+.Search > input:focus {
+  outline: none;
+}
 
 .Icons {
   display: flex;

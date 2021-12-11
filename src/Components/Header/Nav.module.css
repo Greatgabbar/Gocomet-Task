@@ -1,5 +1,4 @@
 .Nav {
-  display: block;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -9,8 +8,88 @@
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
   display: flex;
   justify-content: space-between;
+  text-transform: capitalize;
+  height: 80px;
+}
+
+.Left {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  margin: 0px 30px;
+  flex: 0.5;
+}
+
+.Links {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.Links > a {
+  text-transform: uppercase;
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.logo {
+  margin: 10px 10px;
+}
+
+.Links img {
+  width: 53px;
 }
 
 .Right {
   display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex: 0.5;
 }
+.Search {
+  display: flex;
+  flex-direction: row;
+}
+.Search > div {
+  background-color: #f5f5f6;
+  padding: 8px;
+  border-right: 0;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #f5f5f6;
+}
+
+.Search > input {
+  width: 95%;
+  background-color: #f5f5f6;
+  padding: 8px;
+  color: #696e79;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #f5f5f6;
+  border-left: 0;
+}
+
+.Icons {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.Icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.Icons div p {
+  margin: 0;
+}
+/* .Icons > div >  */

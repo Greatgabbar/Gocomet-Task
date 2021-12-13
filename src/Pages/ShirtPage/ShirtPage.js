@@ -1,7 +1,7 @@
 import Filter from "../../Components/Filter/Filter";
 import Tag from "../../Components/Tag/Tag";
 import classes from "./ShirtPage.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "../../Components/Dropdown/Dropdown";
 import Card from "../../Components/Card/Card";
 
@@ -66,7 +66,7 @@ const Cardarr = [
   },
 ];
 
-const ShirtPage = () => {
+const ShirtPage = ({ shirtData }) => {
   const [list, setList] = useState([
     {
       id: 0,
@@ -105,6 +105,10 @@ const ShirtPage = () => {
       key: "location",
     },
   ]);
+  const [shirts, setShirt] = useState(shirtData);
+  useEffect(() => {
+    setShirt(shirtData);
+  }, [shirtData]);
   return (
     <div className={classes.Container}>
       <div className={classes.Pagination}>
@@ -141,7 +145,7 @@ const ShirtPage = () => {
             </div>
           </div>
           <div className={classes.Cards}>
-            {Cardarr.map((shirt) => {
+            {shirts.map((shirt) => {
               return (
                 <Card
                   img={shirt.img}

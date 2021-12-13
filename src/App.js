@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Shirts from "./Pages/ShirtPage/ShirtPage";
 import Nav from "./Components/Header/Nav";
@@ -57,9 +57,10 @@ const Cardarr = [
 ];
 
 function App() {
+  const [shirts, setShirts] = useState(Cardarr);
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav setShirts={setShirts} shirts={shirts} />
       <Routes>
         <Route
           path="/"
@@ -70,7 +71,7 @@ function App() {
             </div>
           }
         ></Route>
-        <Route path="/shirts" element={<Shirts />}></Route>
+        <Route path="/shirts" element={<Shirts shirtData={shirts} />}></Route>
       </Routes>
     </BrowserRouter>
   );

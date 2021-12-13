@@ -5,7 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = () => {
+function findMatches(wordToMatch, shirts) {
+  return shirts.filter((shirt) => {
+    // here we need to figure out if the city or state matches what was searched
+    const regex = new RegExp(wordToMatch, "gi");
+    return shirt.company.match(regex) || shirt.name.match(regex);
+  });
+}
+
+const Nav = ({ shirts, setShirts }) => {
+  const changeHandle = (e) => {
+    console.log(e.target.value);
+    const arr = findMatches(e.target.value, shirts);
+    setShirts(arr);
+  };
+
   return (
     <div className={classes.Nav}>
       <div className={classes.Left}>
@@ -27,6 +41,7 @@ const Nav = () => {
           <input
             type="search"
             placeholder="Search for products, brands and more"
+            onChange={changeHandle}
           />
         </div>
         <div className={classes.Icons}>

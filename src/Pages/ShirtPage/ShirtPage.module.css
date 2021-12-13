@@ -24,9 +24,10 @@
   align-items: center;
 }
 .Filter p {
-  font-size: 20px;
+  font-size: 17px;
   text-transform: uppercase;
   margin: 0;
+  padding-bottom: 15px;
 }
 
 .Shirts {

@@ -5,18 +5,18 @@ const Filter = () => {
   return (
     <div className={classes.Container}>
       <div className={classes.Gender}>
-        <div className={classes.Types}>
+        <label className={classes.Types}>
           <input type="radio" value="Male" name="gender" /> <p>Men</p>
-        </div>
-        <div className={classes.Types}>
+        </label>
+        <label className={classes.Types}>
           <input type="radio" value="Male" name="gender" /> <p>Women</p>
-        </div>
-        <div className={classes.Types}>
+        </label>
+        <label className={classes.Types}>
           <input type="radio" value="Male" name="gender" /> <p>Boys</p>
-        </div>
-        <div className={classes.Types}>
+        </label>
+        <label className={classes.Types}>
           <input type="radio" value="Girls" name="gender" /> <p>Girls</p>
-        </div>
+        </label>
       </div>
       <div className={classes.Brand}>
         <div className={classes.Heading}>BRAND</div>

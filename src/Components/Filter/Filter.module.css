@@ -8,6 +8,34 @@
   border: 1px solid #edebef;
   border-left: 0;
 }
+
+label > input[type="radio"] {
+  display: none;
+}
+
+label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: gray;
+}
+
+label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(
+    #ff3f6c 0%,
+    #ff3f6c 40%,
+    transparent 50%,
+    transparent
+  );
+  border-color: #ff3f6c;
+}
+
 .Types {
   display: flex;
   align-items: center;

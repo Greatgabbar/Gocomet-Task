@@ -38,6 +38,8 @@
   justify-content: space-between;
   align-items: center;
   align-self: center;
+  border-bottom: 1px solid #eaeaec;
+  padding-bottom: 5px;
 }
 
 .Tag {
@@ -53,5 +55,11 @@
   font-weight: 700;
 }
 
-.Recommend {
+.Cards {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }

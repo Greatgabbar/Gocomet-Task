@@ -1,21 +1,32 @@
+import { useState } from "react";
 import Checkbox from "../Checkbox/Checkbox";
 import classes from "./Filter.module.css";
 
-const Filter = () => {
+const Filter = ({ shirts, setShirt }) => {
+  const [radioData, setRadioData] = useState(null);
+  const [temp, setTemp] = useState(shirts);
+  const radioHandle = (e) => {
+    console.log(e.target.value);
+    setRadioData(e.target.value);
+    const arr = temp.filter((data) => data.type === e.target.value);
+    console.log(arr);
+    setShirt(arr);
+  };
+
   return (
     <div className={classes.Container}>
-      <div className={classes.Gender}>
+      <div className={classes.Gender} onChange={radioHandle}>
         <label className={classes.Types}>
-          <input type="radio" value="Male" name="gender" /> <p>Men</p>
+          <input type="radio" value="men" name="gender" /> <p>Men</p>
         </label>
         <label className={classes.Types}>
-          <input type="radio" value="Male" name="gender" /> <p>Women</p>
+          <input type="radio" value="women" name="gender" /> <p>Women</p>
         </label>
         <label className={classes.Types}>
-          <input type="radio" value="Male" name="gender" /> <p>Boys</p>
+          <input type="radio" value="boys" name="gender" /> <p>Boys</p>
         </label>
         <label className={classes.Types}>
-          <input type="radio" value="Girls" name="gender" /> <p>Girls</p>
+          <input type="radio" value="girls" name="gender" /> <p>Girls</p>
         </label>
       </div>
       <div className={classes.Brand}>

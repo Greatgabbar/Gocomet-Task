@@ -105,10 +105,19 @@ const ShirtPage = ({ shirtData }) => {
       key: "location",
     },
   ]);
+  const [title, setTitle] = useState("Recommend");
   const [shirts, setShirt] = useState(shirtData);
   useEffect(() => {
     setShirt(shirtData);
   }, [shirtData]);
+  useEffect(() => {
+    if (title === "Popularity") {
+      const arr1 = [...shirts];
+      const arr = arr1.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+      console.log(arr);
+      setShirt(arr);
+    }
+  }, [title]);
   return (
     <div className={classes.Container}>
       <div className={classes.Pagination}>
@@ -130,7 +139,7 @@ const ShirtPage = ({ shirtData }) => {
           <div className={classes.Filter}>
             <p>Filters</p>
           </div>
-          <Filter />
+          <Filter shirts={shirtData} setShirt={setShirt} />
         </div>
         <div className={classes.Shirts}>
           <div className={classes.Cont}>
@@ -141,7 +150,13 @@ const ShirtPage = ({ shirtData }) => {
               <span>+16 more</span>
             </div>
             <div className={classes.Recommend}>
-              <Dropdown list={list} title="Recommend" />
+              <Dropdown
+                list={list}
+                title="Recommend"
+                setShirt={setShirt}
+                shirts={shirts}
+                setTitle={setTitle}
+              />
             </div>
           </div>
           <div className={classes.Cards}>

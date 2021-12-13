@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react/cjs/react.development";
 
 function findMatches(wordToMatch, shirts) {
   return shirts.filter((shirt) => {
@@ -14,9 +15,13 @@ function findMatches(wordToMatch, shirts) {
 }
 
 const Nav = ({ shirts, setShirts }) => {
+  const [temp, setTemp] = useState(shirts);
   const changeHandle = (e) => {
     console.log(e.target.value);
-    const arr = findMatches(e.target.value, shirts);
+    if (e.target.value === "") {
+      return setShirts(temp);
+    }
+    const arr = findMatches(e.target.value, temp);
     setShirts(arr);
   };
 

@@ -1,5 +1,5 @@
 import classes from "./Dropdown.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon, FontAwesome } from "@fortawesome/react-fontawesome";
 import {
@@ -7,9 +7,13 @@ import {
   faAngleDown,
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
-const Dropdown = ({ list, title }) => {
+const Dropdown = ({ list, title, shirts, setShirt, setTitle }) => {
   const [isListOpen, setListOpen] = useState(false);
   const [headerTitle, setHeaderTitle] = useState(title);
+
+  useEffect(() => {
+    setTitle(headerTitle);
+  }, [headerTitle]);
 
   const hoverHandle = () => {
     setListOpen(true);

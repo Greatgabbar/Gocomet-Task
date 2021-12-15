@@ -14,11 +14,11 @@
 }
 
 .Details {
-  margin-top: 12px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .Company {
+  margin-top: 12px;
   font-weight: 700;
   font-size: 14px;
 }
@@ -26,4 +26,20 @@
   font-size: 12px;
   padding: 5px 0px;
   color: #535766;
+}
+.Wishlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 1px solid #aeaeaf;
+  font-size: 14px;
+  font-weight: 500;
+}
+.Wishlist:hover {
+  border: 1px solid black;
+}
+.Wishlist p {
+  margin: 0px;
 }

@@ -1,0 +1,24 @@
+.Card {
+  background-color: #fff;
+  color: #282c3f;
+  cursor: pointer;
+  flex-basis: 200px;
+}
+
+.Card:hover {
+  box-shadow: 0 4px 12px 10px rgb(0 0 0 / 5%);
+}
+
+.Image img {
+  width: 100%;
+}
+
+.Details {
+  padding: 5px;
+}
+
+.Name {
+  font-size: 12px;
+  padding: 5px 0px;
+  color: #535766;
+}

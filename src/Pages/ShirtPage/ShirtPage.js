@@ -67,6 +67,7 @@ const Cardarr = [
 ];
 
 const ShirtPage = ({ shirtData }) => {
+  const [hoverCard, setHoverCard] = useState(false);
   const [list, setList] = useState([
     {
       id: 0,

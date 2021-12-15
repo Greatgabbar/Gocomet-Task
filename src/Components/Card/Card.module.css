@@ -14,7 +14,7 @@
 }
 
 .Details {
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 .Company {
@@ -28,6 +28,7 @@
   color: #535766;
 }
 .Wishlist {
+  margin: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,4 +43,69 @@
 }
 .Wishlist p {
   margin: 0px;
+}
+.dots.hehe1 div:nth-child(1) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe2 div:nth-child(2) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe3 div:nth-child(3) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe4 div:nth-child(4) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe5 div:nth-child(5) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe6 div:nth-child(6) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+.dots.hehe7 div:nth-child(7) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+
+.dots.hehe8 div:nth-child(8) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+
+.dots.hehe9 div:nth-child(9) {
+  background: #ff3f6c;
+  color: #fff;
+  animation: animOddEvenLists 1s forwards;
+}
+
+.dots {
+  position: relative;
+  display: flex;
+  top: -12px;
+  padding: 10px 10px 0px 10px;
+  background-color: white;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  height: 4px;
+  width: 4px;
+  background-color: #aeaeaf;
+  border-radius: 50%;
 }

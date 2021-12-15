@@ -165,6 +165,7 @@ const ShirtPage = ({ shirtData }) => {
               return (
                 <Card
                   img={shirt.img}
+                  images={shirt.images}
                   company={shirt.company}
                   name={shirt.name}
                   price={shirt.price}

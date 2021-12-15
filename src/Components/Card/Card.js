@@ -1,10 +1,38 @@
 import classes from "./Card.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon, FontAwesome } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+// import ReactCSSTransitionGroup from "react-transition-group";
 
-const Card = ({ company, img, mrp, name, price }) => {
+const Card = ({ company, images, img, mrp, name, price }) => {
   const [hoverCard, setHoverCard] = useState(false);
+  const [imageData, setImageData] = useState(img);
+  const [interval, setIntervalData] = useState(null);
+  const [activeClass, setActiveClass] = useState(null);
+
+  let count = 0;
+  useEffect(() => {
+    let myInterval;
+    if (hoverCard) {
+      setIntervalData(
+        setInterval(() => {
+          if (count === images.length) {
+            count = 0;
+          }
+          console.log(images[count]);
+          setActiveClass(`hehe${count + 1}`);
+          setImageData(images[count]);
+          count++;
+        }, 1000)
+      );
+    } else {
+      console.log(123);
+      setActiveClass("");
+      setImageData(img);
+      clearInterval(interval);
+    }
+  }, [hoverCard]);
+
   return (
     <div
       className={classes.Card}
@@ -16,7 +44,25 @@ const Card = ({ company, img, mrp, name, price }) => {
       }}
     >
       <div className={classes.Image}>
-        <img src={img} />
+        {/* <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        > */}
+        <img src={imageData} />
+        {hoverCard ? (
+          <div className={`${classes.dots} ${classes[activeClass]}`}>
+            {images.map((image) => {
+              return <div className={classes.dot}></div>;
+            })}
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={classes.Similar}></div>
+        {/* </ReactCSSTransitionGroup> */}
       </div>
       <div className={classes.Details}>
         {!hoverCard ? (

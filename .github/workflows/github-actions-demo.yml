@@ -1,8 +1,7 @@
 name: Automatically deploy on Heroku using Docker
 on: [push]
 jobs:
-  Login to Heroku:
-    name: Deploy On Heroku
+  Login_to_Heroku:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

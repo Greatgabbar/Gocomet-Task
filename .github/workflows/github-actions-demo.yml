@@ -1,12 +1,12 @@
 name: Automatically deploy on Heroku using Docker
 on: [push]
 jobs:
-  Login to Heroku
+  Login to Heroku:
     name: Deploy On Heroku
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Login to Heroku Docker Registry
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login 
+      - uses: actions/checkout@v2
+      - name: Login to Heroku Docker Registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login

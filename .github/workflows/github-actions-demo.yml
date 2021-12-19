@@ -19,7 +19,7 @@ on: [push]
 #         run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
 jobs:
   Deploy_ON_Self_Hosted_Machine:
-    runs-on: self-hoted
+    runs-on: self-hosted
     strategy:
       matrix:
         node-version: [14.x]

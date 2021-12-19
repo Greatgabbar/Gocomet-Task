@@ -1,19 +1,33 @@
 name: Automatically deploy on Heroku using Docker
 on: [push]
+# jobs:
+#   Deploy_ON_Heroku:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Login to Heroku Docker Registry
+#         env:
+#           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#         run: heroku container:login
+#       - name: Building and Push the Container
+#         env:
+#           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#         run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+#       - name: Releasing the Container
+#         env:
+#           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#         run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
 jobs:
-  Deploy_ON_Heroku:
-    runs-on: ubuntu-latest
-    steps:
+  Deploy_ON_Self_Hosted_Machine:
+    runs-on: self-hoted
+    strategy: 
+      matrix: 
+        node-version: [14.x]
+    steps: 
       - uses: actions/checkout@v2
-      - name: Login to Heroku Docker Registry
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:login
-      - name: Building and Push the Container
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
-      - name: Releasing the Container
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+      - name: use Nodejs Version ${{ matrix.node-version }}
+        uses: action/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+        run: npm i
+        run: npm run build --if-present
